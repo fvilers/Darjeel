@@ -1,3 +1,5 @@
+using BookStore.Catalog.Persistence.ReadModels;
+using BookStore.Catalog.ReadModels;
 using Microsoft.Practices.Unity;
 using System;
 
@@ -34,8 +36,9 @@ namespace BookStore.Web.UI
             // NOTE: To load from web.config uncomment the line below. Make sure to add a Microsoft.Practices.Unity.Configuration to the using statements.
             // container.LoadConfiguration();
 
-            // TODO: Register your types here
-            // container.RegisterType<IProductRepository, ProductRepository>();
+            // Catalog
+            container.RegisterType<IReadModelContext, ReadModelContext>();
+            container.RegisterType<IProductDao, ProductDao>();
         }
     }
 }

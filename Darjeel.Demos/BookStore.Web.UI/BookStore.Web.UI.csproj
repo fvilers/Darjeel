@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -135,13 +143,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure.EntityFramework\Darjeel.Infrastructure.EntityFramework.csproj">
+      <Project>{d840b7f8-c596-4302-bd7b-9318d4ebe944}</Project>
+      <Name>Darjeel.Infrastructure.EntityFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure\Darjeel.Infrastructure.csproj">
       <Project>{3607CA1D-058C-4370-8690-71CF03AC0A3D}</Project>
       <Name>Darjeel.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BookStore.Catalog.Persistence\BookStore.Catalog.Persistence.csproj">
+      <Project>{3109B796-C25D-4C41-88AA-6730B913B675}</Project>
+      <Name>BookStore.Catalog.Persistence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BookStore.Catalog.UI\BookStore.Catalog.UI.csproj">
       <Project>{18efe82b-cfa7-455a-885b-ccc431954f0a}</Project>
       <Name>BookStore.Catalog.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookStore.Catalog\BookStore.Catalog.csproj">
+      <Project>{E8E5CC21-0506-44F7-82E9-F8E74B25C30D}</Project>
+      <Name>BookStore.Catalog</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
