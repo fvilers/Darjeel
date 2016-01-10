@@ -49,7 +49,9 @@
     </Compile>
     <Compile Include="Domain\AggregateRoot.cs" />
     <Compile Include="Domain\IAggregateRoot.cs" />
+    <Compile Include="EventSourcing\StoredEvent.cs" />
     <Compile Include="EventSourcing\IEventSourced.cs" />
+    <Compile Include="EventSourcing\IEventStore.cs" />
     <Compile Include="EventSourcing\IVersionedEvent.cs" />
     <Compile Include="EventSourcing\VersionedEvent.cs" />
     <Compile Include="Messaging\Command.cs" />
