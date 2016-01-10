@@ -12,10 +12,9 @@ namespace Darjeel.Infrastructure.Messaging.Handling
         {
             if (handler == null) throw new ArgumentNullException(nameof(handler));
 
-            var genericHandler = typeof(ICommandHandler<>);
             var supportedCommandTypes = handler.GetType()
                 .GetInterfaces()
-                .Where(iface => iface.IsGenericType && iface.GetGenericTypeDefinition() == genericHandler)
+                .Where(iface => iface.IsGenericType && iface.GetGenericTypeDefinition() == typeof(ICommandHandler<>))
                 .Select(iface => iface.GetGenericArguments()[0])
                 .ToList();
 
