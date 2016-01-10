@@ -48,6 +48,7 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Domain\IAggregateRoot.cs" />
+    <Compile Include="EventSourcing\IEventSourced.cs" />
     <Compile Include="EventSourcing\IVersionedEvent.cs" />
     <Compile Include="EventSourcing\VersionedEvent.cs" />
     <Compile Include="Messaging\Command.cs" />
