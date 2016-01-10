@@ -109,6 +109,10 @@
       <Project>{3607CA1D-058C-4370-8690-71CF03AC0A3D}</Project>
       <Name>Darjeel.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BookStore.Catalog.UI\BookStore.Catalog.UI.csproj">
+      <Project>{18efe82b-cfa7-455a-885b-ccc431954f0a}</Project>
+      <Name>BookStore.Catalog.UI</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
