@@ -41,6 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadModels\Product.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.Catalog\BookStore.Catalog.csproj">
+      <Project>{E8E5CC21-0506-44F7-82E9-F8E74B25C30D}</Project>
+      <Name>BookStore.Catalog</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
