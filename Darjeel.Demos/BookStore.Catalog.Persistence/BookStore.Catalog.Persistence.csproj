@@ -49,9 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\ProductConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadModels\IReadModelContext.cs" />
     <Compile Include="ReadModels\Product.cs" />
+    <Compile Include="ReadModels\ReadModelContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure.EntityFramework\Darjeel.Infrastructure.EntityFramework.csproj">
