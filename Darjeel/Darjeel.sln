@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.EntityFramework", "Darjeel.Infrastructure.EntityFramework\Darjeel.Infrastructure.EntityFramework.csproj", "{D840B7F8-C596-4302-BD7B-9318D4EBE944}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.Web", "Darjeel.Infrastructure.Web\Darjeel.Infrastructure.Web.csproj", "{D75D437E-CF44-4646-AD88-0ECA15F92383}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D840B7F8-C596-4302-BD7B-9318D4EBE944}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D840B7F8-C596-4302-BD7B-9318D4EBE944}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D840B7F8-C596-4302-BD7B-9318D4EBE944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D75D437E-CF44-4646-AD88-0ECA15F92383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75D437E-CF44-4646-AD88-0ECA15F92383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75D437E-CF44-4646-AD88-0ECA15F92383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D75D437E-CF44-4646-AD88-0ECA15F92383}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
