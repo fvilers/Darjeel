@@ -1,7 +1,12 @@
 using BookStore.Catalog.Persistence.ReadModels;
 using BookStore.Catalog.ReadModels;
+using Darjeel.Infrastructure.Memory.Processors;
+using Darjeel.Infrastructure.Messaging;
+using Darjeel.Infrastructure.Messaging.Handling;
+using Darjeel.Infrastructure.Processors;
 using Microsoft.Practices.Unity;
 using System;
+using System.Collections.Concurrent;
 
 namespace BookStore.Web.UI
 {
@@ -39,6 +44,15 @@ namespace BookStore.Web.UI
             // Catalog
             container.RegisterType<IReadModelContext, ReadModelContext>();
             container.RegisterType<IProductDao, ProductDao>();
+
+            // Infrastructure
+            container.RegisterType<ICommandHandlerRegistry, CommandHandlerRegistry>(new ContainerControlledLifetimeManager());
+            container.RegisterInstance<IProducerConsumerCollection<Envelope<ICommand>>>(new ConcurrentQueue<Envelope<ICommand>>());
+            container.RegisterType<IProcessor, CommandProcessor>("CommandProcessor");
+
+            container.RegisterType<IEventHandlerRegistry, EventHandlerRegistry>(new ContainerControlledLifetimeManager());
+            container.RegisterInstance<IProducerConsumerCollection<Envelope<IEvent>>>(new ConcurrentQueue<Envelope<IEvent>>());
+            container.RegisterType<IProcessor, EventProcessor>("EventProcessor");
         }
     }
 }

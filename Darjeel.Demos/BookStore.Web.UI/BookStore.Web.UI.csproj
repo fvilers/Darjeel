@@ -164,6 +164,10 @@
       <Project>{E8E5CC21-0506-44F7-82E9-F8E74B25C30D}</Project>
       <Name>BookStore.Catalog</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Darjeel.Infrastructure.Memory\Darjeel.Infrastructure.Memory.csproj">
+      <Project>{E3CB8B1C-316B-44F1-8EB7-4ABEC09F14B8}</Project>
+      <Name>Darjeel.Infrastructure.Memory</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
