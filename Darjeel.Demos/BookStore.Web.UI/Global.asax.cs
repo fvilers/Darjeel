@@ -8,6 +8,7 @@ namespace BookStore.Web.UI
         protected void Application_Start(object sender, EventArgs e)
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            ProcessorConfig.Start(UnityConfig.GetConfiguredContainer());
         }
     }
 }
