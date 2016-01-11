@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Darjeel.Infrastructure.Memory.Messaging
 {
-    public class InMemoryCommandBus : ICommandBus
+    public class CommandBus : ICommandBus
     {
         private readonly IProducerConsumerCollection<Envelope<ICommand>> _commandCollection;
 
-        public InMemoryCommandBus(IProducerConsumerCollection<Envelope<ICommand>> commandCollection)
+        public CommandBus(IProducerConsumerCollection<Envelope<ICommand>> commandCollection)
         {
             if (commandCollection == null) throw new ArgumentNullException(nameof(commandCollection));
             _commandCollection = commandCollection;
