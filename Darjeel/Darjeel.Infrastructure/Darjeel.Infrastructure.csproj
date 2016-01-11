@@ -71,7 +71,6 @@
     <Compile Include="Messaging\IEvent.cs" />
     <Compile Include="Messaging\IEventBus.cs" />
     <Compile Include="Messaging\IMessage.cs" />
-    <Compile Include="Messaging\InMemoryCommandBus.cs" />
     <Compile Include="Persistence\IUnitOfWork.cs" />
     <Compile Include="Processors\IProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

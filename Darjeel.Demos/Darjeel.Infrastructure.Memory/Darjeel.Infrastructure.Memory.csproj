@@ -43,7 +43,14 @@
     <Compile Include="..\..\Darjeel\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Messaging\CommandBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure\Darjeel.Infrastructure.csproj">
+      <Project>{3607CA1D-058C-4370-8690-71CF03AC0A3D}</Project>
+      <Name>Darjeel.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
