@@ -32,6 +32,15 @@ namespace BookStore.Catalog.UI.Controllers
             return Ok(products);
         }
 
+        [HttpGet]
+        [Route("{id:guid}")]
+        public async Task<IHttpActionResult> Get(Guid id)
+        {
+            var product = await _dao.GetAsync(id);
+
+            return Ok(product);
+        }
+
         [HttpPost]
         [Route("")]
         public async Task<IHttpActionResult> Create(CreateProduct command)
