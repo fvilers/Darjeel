@@ -1,20 +1,40 @@
 ﻿using Darjeel.Infrastructure.EventSourcing;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Darjeel.Infrastructure.EntityFramework.EventSourcing
 {
     public class EventStore : IEventStore
     {
-        public Task<IEnumerable<StoredEvent>> FindAsync(Guid aggregateId)
+        private readonly IEventContext _context;
+
+        public EventStore(IEventContext context)
         {
-            throw new NotImplementedException();
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            _context = context;
         }
 
-        public Task SaveAsync(IEnumerable<StoredEvent> events)
+        public async Task<IEnumerable<StoredEvent>> FindAsync(Guid aggregateId)
         {
-            throw new NotImplementedException();
+            var query = from x in _context.Events
+                        where x.AggregateId == aggregateId
+                        select x;
+            var results = await query.ToArrayAsync();
+
+            return results;
+        }
+
+        public async Task SaveAsync(IEnumerable<StoredEvent> events)
+        {
+            foreach (var e in events)
+            {
+                _context.Events.Add(e);
+            }
+
+            await _context.SaveChangesAsync();
         }
     }
 }
