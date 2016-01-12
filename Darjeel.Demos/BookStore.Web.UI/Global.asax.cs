@@ -7,8 +7,11 @@ namespace BookStore.Web.UI
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            var container = UnityConfig.GetConfiguredContainer();
+
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            ProcessorConfig.Start(UnityConfig.GetConfiguredContainer());
+            RegistryConfig.RegisterCommandHandlers(container);
+            ProcessorConfig.Start(container);
         }
     }
 }

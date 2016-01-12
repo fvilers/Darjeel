@@ -1,0 +1,26 @@
+﻿using Darjeel.Infrastructure.Messaging.Handling;
+using Microsoft.Practices.Unity;
+using System;
+
+namespace BookStore.Web.UI
+{
+    public static class RegistryConfig
+    {
+        public static void RegisterCommandHandlers(IUnityContainer container)
+        {
+            if (container == null) throw new ArgumentNullException(nameof(container));
+
+            var registry = container.Resolve<ICommandHandlerRegistry>();
+
+            if (registry == null)
+            {
+                throw new Exception("No command handler registry has been registed within the given container.");
+            }
+
+            foreach (var handler in container.ResolveAll<ICommandHandler>())
+            {
+                registry.Register(handler);
+            }
+        }
+    }
+}
