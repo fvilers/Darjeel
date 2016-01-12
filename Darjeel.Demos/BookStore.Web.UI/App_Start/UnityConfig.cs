@@ -58,6 +58,7 @@ namespace BookStore.Web.UI
             container.RegisterType<ITextSerializer, JsonTextSerializer>();
 
             // Infrastructure - Event sourcing
+            container.RegisterType<IEventContext, EventContext>();
             container.RegisterType<IEventStore, EventStore>();
             container.RegisterType(typeof(IAggregateRepository<>), typeof(AggregateRepository<>));
 

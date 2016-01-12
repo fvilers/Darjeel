@@ -2,7 +2,6 @@
 using Darjeel.Infrastructure.Domain;
 using Darjeel.Infrastructure.Messaging.Handling;
 using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace BookStore.Catalog.CommandHandlers
@@ -19,10 +18,8 @@ namespace BookStore.Catalog.CommandHandlers
 
         public async Task HandleAsync(CreateProduct command)
         {
-            Trace.TraceError("Create product handler not implemented.");
-
             var product = new Product(command.Title);
-            await _repository.StoreAsync(product);
+            await _repository.StoreAsync(product, command.Id.ToString());
         }
     }
 }
