@@ -25,5 +25,34 @@ namespace BookStore.Catalog.Persistence.ReadModels
 
             return products;
         }
+
+        public async Task<IReadModelProduct> GetAsync(Guid aggregateId)
+        {
+            if (aggregateId == Guid.Empty) throw new ArgumentNullException(nameof(aggregateId));
+
+            var query = from x in _context.Products
+                        where x.AggregateId == aggregateId
+                        select x;
+            var product = await query.FirstOrDefaultAsync();
+
+            return product;
+        }
+
+        public IReadModelProduct Add(Guid aggregateId)
+        {
+            if (aggregateId == Guid.Empty) throw new ArgumentNullException(nameof(aggregateId));
+
+            var product = _context.Products.Add(new ReadModelProduct
+            {
+                AggregateId = aggregateId
+            });
+
+            return product;
+        }
+
+        public async Task<int> SaveChangesAsync()
+        {
+            return await _context.SaveChangesAsync();
+        }
     }
 }
