@@ -120,6 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.module.js" />
+    <Content Include="app\app.routes.js" />
+    <Content Include="app\catalog\catalog.module.js" />
+    <Content Include="app\catalog\catalog.routes.js" />
+    <Content Include="app\catalog\controllers\product.controller.js" />
+    <Content Include="app\catalog\partials\products.html" />
+    <Content Include="app\catalog\services\product.service.js" />
     <Content Include="Global.asax" />
     <Content Include="Gulpfile.js" />
     <Content Include="index.html" />

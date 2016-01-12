@@ -9,6 +9,7 @@ var config = {
         src: [
             "bower_components/angular/angular.js",
             "bower_components/angular-route/angular-route.js",
+            "app/catalog/**/*.js",
             "app/*.js"
         ],
         bundle: {
