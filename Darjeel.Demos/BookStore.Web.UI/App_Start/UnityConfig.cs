@@ -1,3 +1,4 @@
+using BookStore.Catalog.CommandHandlers;
 using BookStore.Catalog.Persistence.ReadModels;
 using BookStore.Catalog.ReadModels;
 using Darjeel.Infrastructure.Memory.Processors;
@@ -41,7 +42,10 @@ namespace BookStore.Web.UI
             // NOTE: To load from web.config uncomment the line below. Make sure to add a Microsoft.Practices.Unity.Configuration to the using statements.
             // container.LoadConfiguration();
 
-            // Catalog
+            // Catalog command handlers
+            container.RegisterType<ICommandHandler, ProductCommandHandler>("ProductCommandHandler");
+
+            // Catalog read models
             container.RegisterType<IReadModelContext, ReadModelContext>();
             container.RegisterType<IProductDao, ProductDao>();
 
