@@ -21,7 +21,7 @@ namespace Darjeel.Infrastructure.Domain
         }
 
         protected void Handle<T>(Action<T> handler)
-            where T : IVersionedEvent
+            where T : IEvent
         {
             if (handler == null) throw new ArgumentNullException(nameof(handler));
 
