@@ -119,10 +119,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.module.js" />
     <Content Include="Global.asax" />
+    <Content Include="Gulpfile.js" />
+    <Content Include="index.html" />
     <Content Include="packages.config" />
-    <Content Include=".bowerrc" />
     <Content Include="bower.json" />
+    <Content Include="package.json" />
+    <Content Include=".gitignore" />
+    <Content Include="assets\js\.keep" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

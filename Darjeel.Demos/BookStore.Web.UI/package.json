@@ -1,0 +1,22 @@
+{
+  "name": "bookstore.web.ui",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fvilers/Darjeel.git"
+  },
+  "author": "Fabian Vilers <fabian.vilers@dev-one.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fvilers/Darjeel/issues"
+  },
+  "homepage": "https://github.com/fvilers/Darjeel#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1"
+  }
+}
