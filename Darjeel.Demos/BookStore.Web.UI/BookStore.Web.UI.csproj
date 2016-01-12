@@ -123,7 +123,9 @@
     <Content Include="app\app.routes.js" />
     <Content Include="app\catalog\catalog.module.js" />
     <Content Include="app\catalog\catalog.routes.js" />
+    <Content Include="app\catalog\controllers\add-product.controller.js" />
     <Content Include="app\catalog\controllers\product.controller.js" />
+    <Content Include="app\catalog\partials\add-product.html" />
     <Content Include="app\catalog\partials\products.html" />
     <Content Include="app\catalog\services\product.service.js" />
     <Content Include="Global.asax" />
@@ -134,6 +136,7 @@
     <Content Include="package.json" />
     <Content Include=".gitignore" />
     <Content Include="assets\js\.keep" />
+    <Content Include="app\app.interceptors.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

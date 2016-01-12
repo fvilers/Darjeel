@@ -47,7 +47,7 @@ namespace BookStore.Catalog.UI.Controllers
         {
             await _bus.SendAsync(command);
 
-            return StatusCode(HttpStatusCode.Created);
+            return StatusCode(HttpStatusCode.Accepted);
         }
     }
 }

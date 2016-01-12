@@ -10,7 +10,8 @@ var config = {
             "bower_components/angular/angular.js",
             "bower_components/angular-route/angular-route.js",
             "app/catalog/**/*.js",
-            "app/*.js"
+            "app/app.module.js",
+            "app/app.*.js"
         ],
         bundle: {
             path: "assets/js",

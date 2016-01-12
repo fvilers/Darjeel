@@ -9,8 +9,13 @@
             return $http.get(url);
         }
 
+        function add(product) {
+            return $http.post(url, product);
+        }
+
         var service = {
-            find: find
+            find: find,
+            add: add
         };
 
         return service;
