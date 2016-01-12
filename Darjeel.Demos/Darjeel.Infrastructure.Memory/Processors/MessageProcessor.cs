@@ -2,6 +2,7 @@
 using Darjeel.Infrastructure.Processors;
 using System;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -43,7 +44,16 @@ namespace Darjeel.Infrastructure.Memory.Processors
                 Envelope<T> envelope;
                 if (_commandCollection.TryTake(out envelope))
                 {
-                    ProcessMessage(envelope.Body, envelope.CorrelationId);
+                    try
+                    {
+                        ProcessMessage(envelope.Body, envelope.CorrelationId);
+                    }
+                    catch (Exception e)
+                    {
+                        Trace.TraceError("An exception happened while processing message through handler/s:\r\n{0}.", e);
+                        Trace.TraceWarning("Error will be ignored and message receiving will continue.");
+                        Debugger.Break();
+                    }
                 }
 
                 await Task.Delay(pollDelay, cancellationToken);

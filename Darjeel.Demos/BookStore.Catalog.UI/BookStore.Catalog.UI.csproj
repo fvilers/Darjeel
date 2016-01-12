@@ -60,6 +60,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure\Darjeel.Infrastructure.csproj">
+      <Project>{3607CA1D-058C-4370-8690-71CF03AC0A3D}</Project>
+      <Name>Darjeel.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BookStore.Catalog\BookStore.Catalog.csproj">
       <Project>{E8E5CC21-0506-44F7-82E9-F8E74B25C30D}</Project>
       <Name>BookStore.Catalog</Name>

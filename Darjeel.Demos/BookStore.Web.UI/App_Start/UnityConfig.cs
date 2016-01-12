@@ -1,6 +1,7 @@
 using BookStore.Catalog.CommandHandlers;
 using BookStore.Catalog.Persistence.ReadModels;
 using BookStore.Catalog.ReadModels;
+using Darjeel.Infrastructure.Memory.Messaging;
 using Darjeel.Infrastructure.Memory.Processors;
 using Darjeel.Infrastructure.Messaging;
 using Darjeel.Infrastructure.Messaging.Handling;
@@ -53,10 +54,12 @@ namespace BookStore.Web.UI
             container.RegisterType<ICommandHandlerRegistry, CommandHandlerRegistry>(new ContainerControlledLifetimeManager());
             container.RegisterInstance<IProducerConsumerCollection<Envelope<ICommand>>>(new ConcurrentQueue<Envelope<ICommand>>());
             container.RegisterType<IProcessor, CommandProcessor>("CommandProcessor");
+            container.RegisterType<ICommandBus, CommandBus>();
 
             container.RegisterType<IEventHandlerRegistry, EventHandlerRegistry>(new ContainerControlledLifetimeManager());
             container.RegisterInstance<IProducerConsumerCollection<Envelope<IEvent>>>(new ConcurrentQueue<Envelope<IEvent>>());
             container.RegisterType<IProcessor, EventProcessor>("EventProcessor");
+            container.RegisterType<IEventBus, EventBus>();
         }
     }
 }
