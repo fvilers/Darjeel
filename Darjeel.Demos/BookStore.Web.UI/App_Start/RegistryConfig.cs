@@ -22,5 +22,22 @@ namespace BookStore.Web.UI
                 registry.Register(handler);
             }
         }
+
+        public static void RegisterEventHandlers(IUnityContainer container)
+        {
+            if (container == null) throw new ArgumentNullException(nameof(container));
+
+            var registry = container.Resolve<IEventHandlerRegistry>();
+
+            if (registry == null)
+            {
+                throw new Exception("No event handler registry has been registed within the given container.");
+            }
+
+            foreach (var handler in container.ResolveAll<IEventHandler>())
+            {
+                registry.Register(handler);
+            }
+        }
     }
 }

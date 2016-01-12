@@ -5,5 +5,6 @@ namespace Darjeel.Infrastructure.EventSourcing
     public interface IVersionedEvent : IEvent
     {
         int Version { get; }
+        IEvent Event { get; }
     }
 }

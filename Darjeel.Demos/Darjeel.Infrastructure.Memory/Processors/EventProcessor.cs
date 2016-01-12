@@ -1,9 +1,10 @@
+using Darjeel.Infrastructure.EventSourcing;
+using Darjeel.Infrastructure.Messaging;
+using Darjeel.Infrastructure.Messaging.Handling;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Darjeel.Infrastructure.Messaging;
-using Darjeel.Infrastructure.Messaging.Handling;
 
 namespace Darjeel.Infrastructure.Memory.Processors
 {
@@ -20,6 +21,9 @@ namespace Darjeel.Infrastructure.Memory.Processors
 
         protected override void ProcessMessage(IEvent message, string correlationId)
         {
+            var versionedEvent = message as IVersionedEvent;
+            message = versionedEvent?.Event ?? message;
+
             var eventType = message.GetType();
             IEnumerable<IEventHandler> handlers;
 
@@ -28,7 +32,7 @@ namespace Darjeel.Infrastructure.Memory.Processors
                 foreach (var handler in handlers)
                 {
                     Trace.TraceInformation("Event '{0}' handled by '{1}.", eventType.FullName, handler.GetType().FullName);
-                    ((dynamic)handler).Handle((dynamic)message);
+                    ((dynamic)handler).HandleAsync((dynamic)message);
                 }
             }
             else if (_registry.TryGetHandlers(typeof(ICommand), out handlers))

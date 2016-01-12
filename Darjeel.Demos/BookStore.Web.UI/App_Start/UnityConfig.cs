@@ -1,4 +1,5 @@
 using BookStore.Catalog.CommandHandlers;
+using BookStore.Catalog.EventHandlers;
 using BookStore.Catalog.Persistence.ReadModels;
 using BookStore.Catalog.ReadModels;
 using Darjeel.Infrastructure.Domain;
@@ -49,6 +50,9 @@ namespace BookStore.Web.UI
 
             // Catalog - Command handlers
             container.RegisterType<ICommandHandler, ProductCommandHandler>("ProductCommandHandler");
+
+            // Catalog - Event handlers
+            container.RegisterType<IEventHandler, ProductDenormalizer>("ProductDenormalizer");
 
             // Catalog - Read models
             container.RegisterType<IReadModelContext, ReadModelContext>();

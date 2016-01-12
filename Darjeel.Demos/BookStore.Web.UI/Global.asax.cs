@@ -11,6 +11,7 @@ namespace BookStore.Web.UI
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RegistryConfig.RegisterCommandHandlers(container);
+            RegistryConfig.RegisterEventHandlers(container);
             ProcessorConfig.Start(container);
         }
     }
