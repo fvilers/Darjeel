@@ -53,8 +53,12 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ContextBase.cs" />
+    <Compile Include="EventSourcing\EventContext.cs" />
     <Compile Include="EventSourcing\EventStore.cs" />
+    <Compile Include="EventSourcing\IEventContext.cs" />
+    <Compile Include="EventSourcing\Migrations\StoredEventConfiguration.cs" />
     <Compile Include="IContext.cs" />
+    <Compile Include="EventSourcing\Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
