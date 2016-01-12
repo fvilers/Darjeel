@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 
 namespace BookStore.Catalog.ReadModels
 {
-    public interface IProductDao
+    public interface IReadModelProductDao
     {
-        Task<IEnumerable<IProduct>> FindAsync();
+        Task<IEnumerable<IReadModelProduct>> FindAsync();
     }
 }

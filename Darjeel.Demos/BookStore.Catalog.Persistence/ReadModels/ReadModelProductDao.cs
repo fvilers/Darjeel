@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace BookStore.Catalog.Persistence.ReadModels
 {
-    public class ProductDao : IProductDao
+    public class ReadModelProductDao : IReadModelProductDao
     {
         private readonly IReadModelContext _context;
 
-        public ProductDao(IReadModelContext context)
+        public ReadModelProductDao(IReadModelContext context)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
             _context = context;
         }
 
-        public async Task<IEnumerable<IProduct>> FindAsync()
+        public async Task<IEnumerable<IReadModelProduct>> FindAsync()
         {
             var query = from x in _context.Products
                         select x;

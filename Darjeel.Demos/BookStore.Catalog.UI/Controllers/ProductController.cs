@@ -12,10 +12,10 @@ namespace BookStore.Catalog.UI.Controllers
     [RoutePrefix("api/catalog/products")]
     public class ProductController : ApiController
     {
-        private readonly IProductDao _dao;
+        private readonly IReadModelProductDao _dao;
         private readonly ICommandBus _bus;
 
-        public ProductController(IProductDao dao, ICommandBus bus)
+        public ProductController(IReadModelProductDao dao, ICommandBus bus)
         {
             if (dao == null) throw new ArgumentNullException(nameof(dao));
             if (bus == null) throw new ArgumentNullException(nameof(bus));

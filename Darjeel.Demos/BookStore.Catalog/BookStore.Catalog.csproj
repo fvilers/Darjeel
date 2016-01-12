@@ -42,9 +42,10 @@
   <ItemGroup>
     <Compile Include="CommandHandlers\ProductCommandHandler.cs" />
     <Compile Include="Commands\CreateProduct.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReadModels\IProduct.cs" />
-    <Compile Include="ReadModels\IProductDao.cs" />
+    <Compile Include="ReadModels\IReadModelProduct.cs" />
+    <Compile Include="ReadModels\IReadModelProductDao.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure\Darjeel.Infrastructure.csproj">

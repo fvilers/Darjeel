@@ -7,7 +7,7 @@ namespace BookStore.Catalog.Persistence.ReadModels
 {
     public class ReadModelContext : ContextBase, IReadModelContext
     {
-        public IDbSet<Product> Products { get; set; }
+        public IDbSet<ReadModelProduct> Products { get; set; }
 
         private const string SchemaName = "catalog";
 
@@ -20,7 +20,7 @@ namespace BookStore.Catalog.Persistence.ReadModels
         {
             if (modelBuilder == null) throw new ArgumentNullException(nameof(modelBuilder));
 
-            modelBuilder.Configurations.Add(new ProductConfiguration(SchemaName));
+            modelBuilder.Configurations.Add(new ReadModelProductConfiguration(SchemaName));
         }
     }
 }

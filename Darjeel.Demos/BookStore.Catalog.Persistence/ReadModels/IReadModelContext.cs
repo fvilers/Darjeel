@@ -5,6 +5,6 @@ namespace BookStore.Catalog.Persistence.ReadModels
 {
     public interface IReadModelContext : IContext
     {
-        IDbSet<Product> Products { get; }
+        IDbSet<ReadModelProduct> Products { get; }
     }
 }

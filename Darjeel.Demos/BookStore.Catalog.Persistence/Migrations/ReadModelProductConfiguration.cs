@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace BookStore.Catalog.Persistence.Migrations
 {
-    internal class ProductConfiguration : EntityTypeConfiguration<Product>
+    internal class ReadModelProductConfiguration : EntityTypeConfiguration<ReadModelProduct>
     {
-        public ProductConfiguration(string schemaName)
+        public ReadModelProductConfiguration(string schemaName)
         {
             if (schemaName == null) throw new ArgumentNullException(nameof(schemaName));
 

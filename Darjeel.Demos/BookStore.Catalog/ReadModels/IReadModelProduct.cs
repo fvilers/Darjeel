@@ -2,7 +2,7 @@
 
 namespace BookStore.Catalog.ReadModels
 {
-    public interface IProduct
+    public interface IReadModelProduct
     {
         Guid AggregateId { get; set; }
         string Title { get; set; }

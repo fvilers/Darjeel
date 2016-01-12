@@ -50,11 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Migrations\ProductConfiguration.cs" />
+    <Compile Include="Migrations\ReadModelProductConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadModels\IReadModelContext.cs" />
-    <Compile Include="ReadModels\Product.cs" />
-    <Compile Include="ReadModels\ProductDao.cs" />
+    <Compile Include="ReadModels\ReadModelProduct.cs" />
+    <Compile Include="ReadModels\ReadModelProductDao.cs" />
     <Compile Include="ReadModels\ReadModelContext.cs" />
   </ItemGroup>
   <ItemGroup>

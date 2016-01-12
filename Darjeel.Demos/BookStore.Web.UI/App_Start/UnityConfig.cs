@@ -48,7 +48,7 @@ namespace BookStore.Web.UI
 
             // Catalog read models
             container.RegisterType<IReadModelContext, ReadModelContext>();
-            container.RegisterType<IProductDao, ProductDao>();
+            container.RegisterType<IReadModelProductDao, ReadModelProductDao>();
 
             // Infrastructure
             container.RegisterType<ICommandHandlerRegistry, CommandHandlerRegistry>(new ContainerControlledLifetimeManager());
