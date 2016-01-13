@@ -2,8 +2,8 @@
 using BookStore.Catalog.ReadModels;
 using Darjeel.Infrastructure.Messaging;
 using Darjeel.Infrastructure.Messaging.Extensions;
+using Darjeel.Infrastructure.Web.Http.Extensions;
 using System;
-using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -47,7 +47,7 @@ namespace BookStore.Catalog.UI.Controllers
         {
             await _bus.SendAsync(command);
 
-            return StatusCode(HttpStatusCode.Accepted);
+            return this.Accepted();
         }
     }
 }
