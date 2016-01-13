@@ -2,10 +2,10 @@
 	"use strict";
 
 	/* @ngInject */
-	function httpErrorLogger($q, $log, $window) {
+	function httpErrorLogger($q, $log) {
 		function onResponse(response) {
             if (response && response.status === 202) {
-                $window.alert("Your submission has been accepted.");
+                $.growl("Your submission has been accepted.", { type: "success" });
             }
 
 			return response;
@@ -32,6 +32,6 @@
 	angular
 		.module("app")
 		.config(["$httpProvider", config])
-	    .factory("httpErrorLogger", ["$q", "$log", "$window", httpErrorLogger])
+	    .factory("httpErrorLogger", ["$q", "$log", httpErrorLogger])
 	;
 })();

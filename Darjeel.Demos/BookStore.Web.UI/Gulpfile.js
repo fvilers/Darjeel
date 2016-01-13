@@ -11,6 +11,7 @@ var config = {
         src: [
             "bower_components/jquery/dist/jquery.js",
             "bower_components/bootstrap/dist/js/bootstrap.js",
+            "bower_components/bootstrap-growl-forked/bootstrap-growl.js",
             "bower_components/angular/angular.js",
             "bower_components/angular-route/angular-route.js",
             "app/catalog/**/*.js",
