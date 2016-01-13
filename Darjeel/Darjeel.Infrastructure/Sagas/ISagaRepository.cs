@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Darjeel.Infrastructure.Sagas
 {
-    public interface ISagaRepository<T> : IDisposable
+    public interface ISagaRepository<T>
         where T : class, ISaga
     {
         Task<T> GetAsync(Expression<Func<T, bool>> predicate);
