@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Catalog.Persisten
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.EntityFramework", "..\Darjeel\Darjeel.Infrastructure.EntityFramework\Darjeel.Infrastructure.EntityFramework.csproj", "{D840B7F8-C596-4302-BD7B-9318D4EBE944}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.Memory", "Darjeel.Infrastructure.Memory\Darjeel.Infrastructure.Memory.csproj", "{E3CB8B1C-316B-44F1-8EB7-4ABEC09F14B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.Memory", "..\Darjeel\Darjeel.Infrastructure.Memory\Darjeel.Infrastructure.Memory.csproj", "{E3CB8B1C-316B-44F1-8EB7-4ABEC09F14B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.Web", "..\Darjeel\Darjeel.Infrastructure.Web\Darjeel.Infrastructure.Web.csproj", "{D75D437E-CF44-4646-AD88-0ECA15F92383}"
 EndProject
