@@ -76,6 +76,7 @@
     <Compile Include="Processors\IProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sagas\ISaga.cs" />
+    <Compile Include="Sagas\Saga.cs" />
     <Compile Include="Serialization\Extensions\JsonSerializerSettingsExtensions.cs" />
     <Compile Include="Serialization\ITextSerializer.cs" />
     <Compile Include="Serialization\JsonTextSerializer.cs" />
