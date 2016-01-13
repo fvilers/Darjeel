@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Darjeel.Infrastructure.Web")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Darjeel.Infrastructure.Web")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Dev One")]
 [assembly: AssemblyProduct("Darjeel.Infrastructure.Web")]
