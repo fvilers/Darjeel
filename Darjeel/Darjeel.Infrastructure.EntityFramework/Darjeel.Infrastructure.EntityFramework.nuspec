@@ -13,6 +13,6 @@
     <description>$description$</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2016</copyright>
-    <tags>CQRS EventSourcing Async EntityFramework</tags>
+    <tags>CQRS EventSourcing Async EF Data Database O/RM ADO.NET</tags>
   </metadata>
 </package>

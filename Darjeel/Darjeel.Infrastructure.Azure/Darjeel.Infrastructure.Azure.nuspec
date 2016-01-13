@@ -13,6 +13,6 @@
     <description>$description$</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2016</copyright>
-    <tags>CQRS EventSourcing Async Azure</tags>
+    <tags>CQRS EventSourcing Async Azure Storage Table</tags>
   </metadata>
 </package>
