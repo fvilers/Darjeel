@@ -1,21 +1,35 @@
 ﻿<!DOCTYPE html>
-<html ng-app="app">
+<html lang="en" ng-app="app">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Book Store</title>
+    <link href="assets/css/app.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Book Store</h1>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/">Book Store</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/products">Product list</a></li>
+                    <li><a href="#/products/add">Add a product</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <ul>
-        <li><a href="#/products">Product list</a></li>
-        <li><a href="#/products/add">Add a product</a></li>
-    </ul>
-
-    <main>
-        <div ng-view></div>
-    </main>
-
+    <div class="container" ng-view>
+    </div>
     <script src="assets/js/app.min.js"></script>
 </body>
 </html>

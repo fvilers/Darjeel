@@ -1,11 +1,14 @@
-﻿<h2>Add a product</h2>
+﻿<div class="page-header">
+    <h1>Add a product</h1>
+</div>
+
 <form ng-submit="vm.addProduct()">
-    <div>
+    <div class="form-group">
         <label for="title">Title</label>
-        <input type="text" id="title" name="title" ng-model="vm.title" placeholder="Title"/>
+        <input type="text" id="title" name="title" class="form-control" ng-model="vm.title" placeholder="Title"/>
     </div>
 
     <div>
-        <button type="submit">Add</button>
+        <button type="submit" class="btn btn-primary">Add</button>
     </div>
 </form>
