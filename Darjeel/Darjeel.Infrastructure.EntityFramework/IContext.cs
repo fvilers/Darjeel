@@ -8,5 +8,6 @@ namespace Darjeel.Infrastructure.EntityFramework
     {
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
         bool IsDetached<TEntity>(TEntity entity) where TEntity : class;
+        DbContextTransaction BeginTransaction();
     }
 }

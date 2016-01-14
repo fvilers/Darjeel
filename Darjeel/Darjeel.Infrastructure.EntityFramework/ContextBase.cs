@@ -19,5 +19,10 @@ namespace Darjeel.Infrastructure.EntityFramework
 
             return entry.State == EntityState.Detached;
         }
+
+        public DbContextTransaction BeginTransaction()
+        {
+            return Database.BeginTransaction();
+        }
     }
 }

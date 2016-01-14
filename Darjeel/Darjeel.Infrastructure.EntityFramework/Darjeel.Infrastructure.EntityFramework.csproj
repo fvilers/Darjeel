@@ -71,6 +71,9 @@
     <Compile Include="Messaging\Migrations\CommandEntityConfiguration.cs" />
     <Compile Include="Messaging\Migrations\MessagingConfiguration.cs" />
     <Compile Include="Messaging\Migrations\EventEntityConfiguration.cs" />
+    <Compile Include="Processors\CommandProcessor.cs" />
+    <Compile Include="Processors\EventProcessor.cs" />
+    <Compile Include="Processors\MessageProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sagas\ISagaContext.cs" />
     <Compile Include="Sagas\SagaRepository.cs" />
@@ -86,6 +89,7 @@
     <None Include="Darjeel.Infrastructure.EntityFramework.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
