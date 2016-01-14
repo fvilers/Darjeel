@@ -2,7 +2,7 @@
 
 namespace Darjeel.Infrastructure.EntityFramework.Messaging
 {
-    public class MessageEntity
+    public abstract class MessageEntity
     {
         public Guid Id { get; private set; }
         public string Body { get; private set; }
@@ -11,12 +11,12 @@ namespace Darjeel.Infrastructure.EntityFramework.Messaging
 
         protected MessageEntity()
         {
-            // Required for Entity Framework
+            Id = Guid.NewGuid();
         }
 
         protected MessageEntity(string body, DateTime? deliveryDate = null, string correlationId = null)
+            : this()
         {
-            Id = Guid.NewGuid();
             Body = body;
             DeliveryDate = deliveryDate;
             CorrelationId = correlationId;

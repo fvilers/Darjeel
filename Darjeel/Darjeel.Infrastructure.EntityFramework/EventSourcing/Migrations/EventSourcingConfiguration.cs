@@ -2,9 +2,9 @@ using System.Data.Entity.Migrations;
 
 namespace Darjeel.Infrastructure.EntityFramework.EventSourcing.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<EventContext>
+    internal sealed class EventSourcingConfiguration : DbMigrationsConfiguration<EventContext>
     {
-        public Configuration()
+        public EventSourcingConfiguration()
         {
             AutomaticMigrationsEnabled = true;
         }

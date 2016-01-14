@@ -60,10 +60,15 @@
     <Compile Include="EventSourcing\IEventContext.cs" />
     <Compile Include="EventSourcing\Migrations\StoredEventConfiguration.cs" />
     <Compile Include="IContext.cs" />
-    <Compile Include="EventSourcing\Migrations\Configuration.cs" />
+    <Compile Include="EventSourcing\Migrations\EventSourcingConfiguration.cs" />
+    <Compile Include="Messaging\BusContext.cs" />
     <Compile Include="Messaging\CommandEntity.cs" />
     <Compile Include="Messaging\EventEntity.cs" />
+    <Compile Include="Messaging\IBusContext.cs" />
     <Compile Include="Messaging\MessageEntity.cs" />
+    <Compile Include="Messaging\Migrations\CommandEntityConfiguration.cs" />
+    <Compile Include="Messaging\Migrations\MessagingConfiguration.cs" />
+    <Compile Include="Messaging\Migrations\EventEntityConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sagas\ISagaContext.cs" />
     <Compile Include="Sagas\SagaRepository.cs" />
