@@ -5,22 +5,17 @@ using BookStore.Catalog.ReadModels;
 using Darjeel.Infrastructure.Domain;
 using Darjeel.Infrastructure.EntityFramework.EventSourcing;
 using Darjeel.Infrastructure.EventSourcing;
-using Darjeel.Infrastructure.Memory.Messaging;
-using Darjeel.Infrastructure.Memory.Processors;
-using Darjeel.Infrastructure.Messaging;
 using Darjeel.Infrastructure.Messaging.Handling;
-using Darjeel.Infrastructure.Processors;
 using Darjeel.Infrastructure.Serialization;
 using Microsoft.Practices.Unity;
 using System;
-using System.Collections.Concurrent;
 
 namespace BookStore.Web.UI
 {
     /// <summary>
     /// Specifies the Unity configuration for the main container.
     /// </summary>
-    public class UnityConfig
+    public partial class UnityConfig
     {
         #region Unity Container
         private static readonly Lazy<IUnityContainer> Container = new Lazy<IUnityContainer>(() =>
@@ -68,15 +63,11 @@ namespace BookStore.Web.UI
 
             // Infrastructure - Command handling
             container.RegisterType<ICommandHandlerRegistry, CommandHandlerRegistry>(new ContainerControlledLifetimeManager());
-            container.RegisterInstance<IProducerConsumerCollection<Envelope<ICommand>>>(new ConcurrentQueue<Envelope<ICommand>>());
-            container.RegisterType<IProcessor, CommandProcessor>("CommandProcessor");
-            container.RegisterType<ICommandBus, CommandBus>();
+            RegisterMemoryCommandBusAndProcessor(container);
 
             // Infrastructure - Event handling
             container.RegisterType<IEventHandlerRegistry, EventHandlerRegistry>(new ContainerControlledLifetimeManager());
-            container.RegisterInstance<IProducerConsumerCollection<Envelope<IEvent>>>(new ConcurrentQueue<Envelope<IEvent>>());
-            container.RegisterType<IProcessor, EventProcessor>("EventProcessor");
-            container.RegisterType<IEventBus, EventBus>();
+            RegisterMemoryEventBusAndProcessor(container);
         }
     }
 }
