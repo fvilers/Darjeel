@@ -63,11 +63,11 @@ namespace BookStore.Web.UI
 
             // Infrastructure - Command handling
             container.RegisterType<ICommandHandlerRegistry, CommandHandlerRegistry>(new ContainerControlledLifetimeManager());
-            RegisterMemoryCommandBusAndProcessor(container);
+            RegisterEntityFrameworkCommandBusAndProcessor(container);
 
             // Infrastructure - Event handling
             container.RegisterType<IEventHandlerRegistry, EventHandlerRegistry>(new ContainerControlledLifetimeManager());
-            RegisterMemoryEventBusAndProcessor(container);
+            RegisterEntityFrameworkEventBusAndProcessor(container);
         }
     }
 }
