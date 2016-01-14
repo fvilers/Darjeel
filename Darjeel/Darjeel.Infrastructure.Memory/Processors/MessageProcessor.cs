@@ -33,7 +33,7 @@ namespace Darjeel.Infrastructure.Memory.Processors
             }
         }
 
-        protected abstract void ProcessMessage(T message, string correlationId);
+        protected abstract Task ProcessMessageAsync(T message, string correlationId);
 
         private async Task StartPollingAsync(CancellationToken cancellationToken)
         {
@@ -46,7 +46,7 @@ namespace Darjeel.Infrastructure.Memory.Processors
                 {
                     try
                     {
-                        ProcessMessage(envelope.Body, envelope.CorrelationId);
+                        await ProcessMessageAsync(envelope.Body, envelope.CorrelationId);
                     }
                     catch (Exception e)
                     {
