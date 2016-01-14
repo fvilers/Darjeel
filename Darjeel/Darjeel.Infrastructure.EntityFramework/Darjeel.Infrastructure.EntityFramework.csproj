@@ -62,7 +62,9 @@
     <Compile Include="IContext.cs" />
     <Compile Include="EventSourcing\Migrations\EventSourcingConfiguration.cs" />
     <Compile Include="Messaging\BusContext.cs" />
+    <Compile Include="Messaging\CommandBus.cs" />
     <Compile Include="Messaging\CommandEntity.cs" />
+    <Compile Include="Messaging\EventBus.cs" />
     <Compile Include="Messaging\EventEntity.cs" />
     <Compile Include="Messaging\IBusContext.cs" />
     <Compile Include="Messaging\MessageEntity.cs" />
