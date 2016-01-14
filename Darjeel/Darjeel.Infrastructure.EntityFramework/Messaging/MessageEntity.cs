@@ -2,19 +2,19 @@
 
 namespace Darjeel.Infrastructure.EntityFramework.Messaging
 {
-    public class Message
+    public class MessageEntity
     {
         public Guid Id { get; private set; }
         public string Body { get; private set; }
         public string CorrelationId { get; private set; }
         public DateTime? DeliveryDate { get; private set; }
 
-        protected Message()
+        protected MessageEntity()
         {
             // Required for Entity Framework
         }
 
-        protected Message(string body, DateTime? deliveryDate = null, string correlationId = null)
+        protected MessageEntity(string body, DateTime? deliveryDate = null, string correlationId = null)
         {
             Id = Guid.NewGuid();
             Body = body;
