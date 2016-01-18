@@ -11,7 +11,7 @@ namespace Darjeel.Infrastructure.Serialization.Extensions
         {
             if (settings == null) throw new ArgumentNullException(nameof(settings));
 
-            Trace.TraceInformation("Configuring JSON writer with indented formatting.");
+            Logging.Darjeel.TraceInformation("Configuring JSON writer with indented formatting.");
             settings.Formatting = Formatting.Indented;
         }
     }
