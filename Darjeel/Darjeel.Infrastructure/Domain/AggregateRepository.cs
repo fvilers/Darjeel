@@ -1,9 +1,9 @@
-﻿using Darjeel.Infrastructure.EventSourcing;
+﻿using Darjeel.Infrastructure.Diagnostics.Extensions;
+using Darjeel.Infrastructure.EventSourcing;
 using Darjeel.Infrastructure.Messaging;
 using Darjeel.Infrastructure.Serialization;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -40,7 +40,7 @@ namespace Darjeel.Infrastructure.Domain
 
             if (!payloads.Any())
             {
-                Trace.TraceInformation($"No events found for aggregate ID '{aggregateId}'.");
+                Logging.Darjeel.TraceInformation($"No events found for aggregate ID '{aggregateId}'.");
                 return null;
             }
 
@@ -53,7 +53,8 @@ namespace Darjeel.Infrastructure.Domain
 
             if (constructor == null)
             {
-                throw new InvalidOperationException("Missing ctor to load aggregate's history");
+                Logging.Darjeel.TraceError("Missing ctor to load aggregate's history.");
+                throw new InvalidOperationException("Missing ctor to load aggregate's history.");
             }
 
             var aggregate = (T)constructor.Invoke(parameters);
