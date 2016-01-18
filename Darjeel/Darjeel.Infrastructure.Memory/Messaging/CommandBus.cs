@@ -1,4 +1,5 @@
-﻿using Darjeel.Infrastructure.Messaging;
+﻿using Darjeel.Infrastructure.Diagnostics.Extensions;
+using Darjeel.Infrastructure.Messaging;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace Darjeel.Infrastructure.Memory.Messaging
 
             if (!_commandCollection.TryAdd(envelope))
             {
+                Logging.DarjeelMemory.TraceError("Sending envelope failed.");
                 throw new Exception("Sending envelope failed.");
             }
 
