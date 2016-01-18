@@ -76,6 +76,7 @@
     <Compile Include="EventSourcing\EventEntity.cs" />
     <Compile Include="EventSourcing\EventStore.cs" />
     <Compile Include="EventSourcing\Extensions\CloudTableExtensions.cs" />
+    <Compile Include="Logging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
