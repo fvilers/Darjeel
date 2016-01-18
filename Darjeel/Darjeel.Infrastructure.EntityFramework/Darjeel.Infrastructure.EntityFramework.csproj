@@ -61,6 +61,7 @@
     <Compile Include="EventSourcing\Migrations\StoredEventConfiguration.cs" />
     <Compile Include="IContext.cs" />
     <Compile Include="EventSourcing\Migrations\EventSourcingConfiguration.cs" />
+    <Compile Include="Logging.cs" />
     <Compile Include="Messaging\BusContext.cs" />
     <Compile Include="Messaging\CommandBus.cs" />
     <Compile Include="Messaging\CommandEntity.cs" />
