@@ -2,7 +2,6 @@
 using Darjeel.Infrastructure.Sagas;
 using System;
 using System.Data.Entity;
-using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
@@ -37,7 +36,7 @@ namespace Darjeel.Infrastructure.EntityFramework.Sagas
 
             if (_context.IsDetached(saga))
             {
-                Trace.TraceInformation($"Attaching saga {saga.Id} to its context because it is currently detached.");
+                Logging.DarjeelEntityFramework.TraceInformation($"Attaching saga {saga.Id} to its context because it is currently detached.");
                 _context.Set<T>().Add(saga);
             }
 
