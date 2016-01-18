@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="Http\Extensions\ApiControllerExtensions.cs" />
     <Compile Include="Http\AcceptedResult.cs" />
+    <Compile Include="Logging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
