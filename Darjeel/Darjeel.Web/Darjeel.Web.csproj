@@ -54,9 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CommonAssemblyInfo.cs">
-      <Link>Properties\CommonAssemblyInfo.cs</Link>
-    </Compile>
     <Compile Include="Http\Extensions\ApiControllerExtensions.cs" />
     <Compile Include="Http\AcceptedResult.cs" />
     <Compile Include="Logging.cs" />
