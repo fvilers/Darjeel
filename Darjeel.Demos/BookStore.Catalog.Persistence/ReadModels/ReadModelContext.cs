@@ -1,5 +1,5 @@
 ﻿using BookStore.Catalog.Persistence.Migrations;
-using Darjeel.Infrastructure.EntityFramework;
+using Darjeel.EntityFramework;
 using System;
 using System.Data.Entity;
 

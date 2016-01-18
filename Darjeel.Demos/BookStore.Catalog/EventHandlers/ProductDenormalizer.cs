@@ -1,6 +1,6 @@
 ﻿using BookStore.Catalog.Events;
 using BookStore.Catalog.ReadModels;
-using Darjeel.Infrastructure.Messaging.Handling;
+using Darjeel.Messaging.Handling;
 using System;
 using System.Threading.Tasks;
 

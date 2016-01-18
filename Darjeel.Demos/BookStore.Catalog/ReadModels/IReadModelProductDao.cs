@@ -1,4 +1,4 @@
-﻿using Darjeel.Infrastructure.Persistence;
+﻿using Darjeel.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

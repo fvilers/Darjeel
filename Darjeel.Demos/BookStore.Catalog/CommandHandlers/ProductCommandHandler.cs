@@ -1,6 +1,6 @@
 ﻿using BookStore.Catalog.Commands;
-using Darjeel.Infrastructure.Domain;
-using Darjeel.Infrastructure.Messaging.Handling;
+using Darjeel.Domain;
+using Darjeel.Messaging.Handling;
 using System;
 using System.Threading.Tasks;
 

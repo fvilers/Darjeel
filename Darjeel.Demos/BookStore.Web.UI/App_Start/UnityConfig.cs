@@ -2,11 +2,11 @@ using BookStore.Catalog.CommandHandlers;
 using BookStore.Catalog.EventHandlers;
 using BookStore.Catalog.Persistence.ReadModels;
 using BookStore.Catalog.ReadModels;
-using Darjeel.Infrastructure.Domain;
-using Darjeel.Infrastructure.EntityFramework.EventSourcing;
-using Darjeel.Infrastructure.EventSourcing;
-using Darjeel.Infrastructure.Messaging.Handling;
-using Darjeel.Infrastructure.Serialization;
+using Darjeel.Domain;
+using Darjeel.EntityFramework.EventSourcing;
+using Darjeel.EventSourcing;
+using Darjeel.Messaging.Handling;
+using Darjeel.Serialization;
 using Microsoft.Practices.Unity;
 using System;
 

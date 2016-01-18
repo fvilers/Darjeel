@@ -58,13 +58,13 @@
     <Compile Include="ReadModels\ReadModelContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure.EntityFramework\Darjeel.Infrastructure.EntityFramework.csproj">
+    <ProjectReference Include="..\..\Darjeel\Darjeel.EntityFramework\Darjeel.EntityFramework.csproj">
       <Project>{D840B7F8-C596-4302-BD7B-9318D4EBE944}</Project>
-      <Name>Darjeel.Infrastructure.EntityFramework</Name>
+      <Name>Darjeel.EntityFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure\Darjeel.Infrastructure.csproj">
+    <ProjectReference Include="..\..\Darjeel\Darjeel\Darjeel.csproj">
       <Project>{3607CA1D-058C-4370-8690-71CF03AC0A3D}</Project>
-      <Name>Darjeel.Infrastructure</Name>
+      <Name>Darjeel</Name>
     </ProjectReference>
     <ProjectReference Include="..\BookStore.Catalog\BookStore.Catalog.csproj">
       <Project>{E8E5CC21-0506-44F7-82E9-F8E74B25C30D}</Project>

@@ -1,7 +1,7 @@
-﻿using Darjeel.Infrastructure.Memory.Messaging;
-using Darjeel.Infrastructure.Memory.Processors;
-using Darjeel.Infrastructure.Messaging;
-using Darjeel.Infrastructure.Processors;
+﻿using Darjeel.Memory.Messaging;
+using Darjeel.Memory.Processors;
+using Darjeel.Messaging;
+using Darjeel.Processors;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Concurrent;

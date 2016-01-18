@@ -60,13 +60,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure.Web\Darjeel.Infrastructure.Web.csproj">
+    <ProjectReference Include="..\..\Darjeel\Darjeel.Web\Darjeel.Web.csproj">
       <Project>{D75D437E-CF44-4646-AD88-0ECA15F92383}</Project>
-      <Name>Darjeel.Infrastructure.Web</Name>
+      <Name>Darjeel.Web</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure\Darjeel.Infrastructure.csproj">
+    <ProjectReference Include="..\..\Darjeel\Darjeel\Darjeel.csproj">
       <Project>{3607CA1D-058C-4370-8690-71CF03AC0A3D}</Project>
-      <Name>Darjeel.Infrastructure</Name>
+      <Name>Darjeel</Name>
     </ProjectReference>
     <ProjectReference Include="..\BookStore.Catalog\BookStore.Catalog.csproj">
       <Project>{E8E5CC21-0506-44F7-82E9-F8E74B25C30D}</Project>

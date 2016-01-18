@@ -1,4 +1,4 @@
-﻿using Darjeel.Infrastructure.EntityFramework;
+﻿using Darjeel.EntityFramework;
 using System.Data.Entity;
 
 namespace BookStore.Catalog.Persistence.ReadModels

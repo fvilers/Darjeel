@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BookStore", "BookStore", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Darjeel", "Darjeel", "{BFD668BC-0814-4B28-BB60-850CF153921C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure", "..\Darjeel\Darjeel.Infrastructure\Darjeel.Infrastructure.csproj", "{3607CA1D-058C-4370-8690-71CF03AC0A3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.", "..\Darjeel\Darjeel.\Darjeel.csproj", "{3607CA1D-058C-4370-8690-71CF03AC0A3D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Catalog", "BookStore.Catalog\BookStore.Catalog.csproj", "{E8E5CC21-0506-44F7-82E9-F8E74B25C30D}"
 EndProject
@@ -17,11 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Catalog.UI", "Boo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Catalog.Persistence", "BookStore.Catalog.Persistence\BookStore.Catalog.Persistence.csproj", "{3109B796-C25D-4C41-88AA-6730B913B675}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.EntityFramework", "..\Darjeel\Darjeel.Infrastructure.EntityFramework\Darjeel.Infrastructure.EntityFramework.csproj", "{D840B7F8-C596-4302-BD7B-9318D4EBE944}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel..EntityFramework", "..\Darjeel\Darjeel.EntityFramework\Darjeel.EntityFramework.csproj", "{D840B7F8-C596-4302-BD7B-9318D4EBE944}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.Memory", "..\Darjeel\Darjeel.Infrastructure.Memory\Darjeel.Infrastructure.Memory.csproj", "{E3CB8B1C-316B-44F1-8EB7-4ABEC09F14B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel..Memory", "..\Darjeel\Darjeel.Memory\Darjeel.Memory.csproj", "{E3CB8B1C-316B-44F1-8EB7-4ABEC09F14B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.Web", "..\Darjeel\Darjeel.Infrastructure.Web\Darjeel.Infrastructure.Web.csproj", "{D75D437E-CF44-4646-AD88-0ECA15F92383}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel..Web", "..\Darjeel\Darjeel.Web\Darjeel.Web.csproj", "{D75D437E-CF44-4646-AD88-0ECA15F92383}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

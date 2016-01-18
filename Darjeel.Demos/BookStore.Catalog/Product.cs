@@ -1,5 +1,5 @@
-﻿using Darjeel.Infrastructure.Domain;
-using Darjeel.Infrastructure.EventSourcing;
+﻿using Darjeel.Domain;
+using Darjeel.EventSourcing;
 using System;
 using System.Collections.Generic;
 using BookStore.Catalog.Events;

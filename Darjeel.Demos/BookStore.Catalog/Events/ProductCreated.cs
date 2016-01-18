@@ -1,4 +1,4 @@
-﻿using Darjeel.Infrastructure.Messaging;
+﻿using Darjeel.Messaging;
 using System;
 
 namespace BookStore.Catalog.Events

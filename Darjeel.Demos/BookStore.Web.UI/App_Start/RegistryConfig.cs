@@ -1,4 +1,4 @@
-﻿using Darjeel.Infrastructure.Messaging.Handling;
+﻿using Darjeel.Messaging.Handling;
 using Microsoft.Practices.Unity;
 using System;
 

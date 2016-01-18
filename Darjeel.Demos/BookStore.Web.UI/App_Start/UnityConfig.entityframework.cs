@@ -1,7 +1,7 @@
-﻿using Darjeel.Infrastructure.EntityFramework.Messaging;
-using Darjeel.Infrastructure.EntityFramework.Processors;
-using Darjeel.Infrastructure.Messaging;
-using Darjeel.Infrastructure.Processors;
+﻿using Darjeel.EntityFramework.Messaging;
+using Darjeel.EntityFramework.Processors;
+using Darjeel.Messaging;
+using Darjeel.Processors;
 using Microsoft.Practices.Unity;
 using System;
 

@@ -1,4 +1,4 @@
-﻿using Darjeel.Infrastructure.Serialization.Extensions;
+﻿using Darjeel.Serialization.Extensions;
 using Newtonsoft.Json.Serialization;
 using System.Web.Http;
 

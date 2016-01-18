@@ -165,13 +165,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure.EntityFramework\Darjeel.Infrastructure.EntityFramework.csproj">
+    <ProjectReference Include="..\..\Darjeel\Darjeel.EntityFramework\Darjeel.EntityFramework.csproj">
       <Project>{d840b7f8-c596-4302-bd7b-9318d4ebe944}</Project>
-      <Name>Darjeel.Infrastructure.EntityFramework</Name>
+      <Name>Darjeel.EntityFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure\Darjeel.Infrastructure.csproj">
+    <ProjectReference Include="..\..\Darjeel\Darjeel\Darjeel.csproj">
       <Project>{3607CA1D-058C-4370-8690-71CF03AC0A3D}</Project>
-      <Name>Darjeel.Infrastructure</Name>
+      <Name>Darjeel</Name>
     </ProjectReference>
     <ProjectReference Include="..\BookStore.Catalog.Persistence\BookStore.Catalog.Persistence.csproj">
       <Project>{3109B796-C25D-4C41-88AA-6730B913B675}</Project>
@@ -185,9 +185,9 @@
       <Project>{E8E5CC21-0506-44F7-82E9-F8E74B25C30D}</Project>
       <Name>BookStore.Catalog</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Darjeel\Darjeel.Infrastructure.Memory\Darjeel.Infrastructure.Memory.csproj">
+    <ProjectReference Include="..\..\Darjeel\Darjeel.Memory\Darjeel.Memory.csproj">
       <Project>{E3CB8B1C-316B-44F1-8EB7-4ABEC09F14B8}</Project>
-      <Name>Darjeel.Infrastructure.Memory</Name>
+      <Name>Darjeel.Memory</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
