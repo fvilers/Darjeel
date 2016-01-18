@@ -1,4 +1,5 @@
-﻿using Darjeel.Infrastructure.EntityFramework.Messaging;
+﻿using Darjeel.Infrastructure.Diagnostics.Extensions;
+using Darjeel.Infrastructure.EntityFramework.Messaging;
 using Darjeel.Infrastructure.Processors;
 using Darjeel.Infrastructure.Serialization;
 using System;
@@ -60,8 +61,8 @@ namespace Darjeel.Infrastructure.EntityFramework.Processors
                 }
                 catch (Exception e)
                 {
-                    Trace.TraceError("An exception happened while processing message through handler/s:\r\n{0}.", e);
-                    Trace.TraceWarning("Error will be ignored and message receiving will continue.");
+                    Logging.DarjeelEntityFramework.TraceError($"An exception happened while processing message through handler/s: {e.Message}.");
+                    Logging.DarjeelEntityFramework.TraceWarning("Error will be ignored and message receiving will continue.");
                     Debugger.Break();
                 }
 
@@ -114,7 +115,7 @@ namespace Darjeel.Infrastructure.EntityFramework.Processors
         [Conditional("TRACE")]
         private void TracePayload(object payload)
         {
-            Trace.WriteLine(Serialize(payload));
+            Logging.DarjeelEntityFramework.TraceData(TraceEventType.Verbose, 0, Serialize(payload));
         }
     }
 }
