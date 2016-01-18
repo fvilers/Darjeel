@@ -1,4 +1,5 @@
-﻿using Darjeel.Infrastructure.Messaging;
+﻿using Darjeel.Infrastructure.Diagnostics.Extensions;
+using Darjeel.Infrastructure.Messaging;
 using Darjeel.Infrastructure.Processors;
 using System;
 using System.Collections.Concurrent;
@@ -50,8 +51,8 @@ namespace Darjeel.Infrastructure.Memory.Processors
                     }
                     catch (Exception e)
                     {
-                        Trace.TraceError("An exception happened while processing message through handler/s:\r\n{0}.", e);
-                        Trace.TraceWarning("Error will be ignored and message receiving will continue.");
+                        Logging.DarjeelMemory.TraceError($"An exception happened while processing message through handler/s: {e.Message}.");
+                        Logging.DarjeelMemory.TraceWarning("Error will be ignored and message receiving will continue.");
                         Debugger.Break();
                     }
                 }
