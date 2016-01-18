@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace Darjeel.Infrastructure.Messaging.Handling
@@ -41,7 +40,7 @@ namespace Darjeel.Infrastructure.Messaging.Handling
                 return true;
             }
 
-            Trace.TraceInformation($"Handler not found for type '{eventType.FullName}'.");
+            Logging.Darjeel.TraceInformation($"Handler not found for type '{eventType.FullName}'.");
             handlers = null;
 
             return false;
