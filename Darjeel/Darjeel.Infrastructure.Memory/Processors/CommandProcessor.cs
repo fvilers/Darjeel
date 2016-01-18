@@ -2,7 +2,6 @@ using Darjeel.Infrastructure.Messaging;
 using Darjeel.Infrastructure.Messaging.Handling;
 using System;
 using System.Collections.Concurrent;
-using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Darjeel.Infrastructure.Memory.Processors
@@ -27,12 +26,12 @@ namespace Darjeel.Infrastructure.Memory.Processors
 
             if (_registry.TryGetHandler(commandType, out handler))
             {
-                Trace.TraceInformation("Command '{0}' handled by '{1}.", commandType.FullName, handler.GetType().FullName);
+                Logging.DarjeelMemory.TraceInformation($"Command '{commandType.FullName}' handled by '{handler.GetType().FullName}.");
                 await ((dynamic)handler).HandleAsync((dynamic)message);
             }
             else if (_registry.TryGetHandler(typeof(ICommand), out handler))
             {
-                Trace.TraceInformation("Command '{0}' handled by '{1}.", commandType.FullName, handler.GetType().FullName);
+                Logging.DarjeelMemory.TraceInformation($"Command '{commandType.FullName}' handled by '{handler.GetType().FullName}.");
                 await ((dynamic)handler).HandleAsync((dynamic)message);
             }
         }
