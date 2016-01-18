@@ -4,7 +4,6 @@ using Darjeel.Infrastructure.Messaging.Handling;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Darjeel.Infrastructure.Memory.Processors
@@ -33,7 +32,7 @@ namespace Darjeel.Infrastructure.Memory.Processors
             {
                 foreach (var handler in handlers)
                 {
-                    Trace.TraceInformation("Event '{0}' handled by '{1}.", eventType.FullName, handler.GetType().FullName);
+                    Logging.DarjeelMemory.TraceInformation($"Event '{eventType.FullName}' handled by '{handler.GetType().FullName}.");
                     var task = ((dynamic)handler).HandleAsync((dynamic)message);
                     tasks.Add(task);
                 }
@@ -42,7 +41,7 @@ namespace Darjeel.Infrastructure.Memory.Processors
             {
                 foreach (var handler in handlers)
                 {
-                    Trace.TraceInformation("Event '{0}' handled by '{1}.", eventType.FullName, handler.GetType().FullName);
+                    Logging.DarjeelMemory.TraceInformation($"Event '{eventType.FullName}' handled by '{handler.GetType().FullName}.");
                     var task = ((dynamic)handler).Handle((dynamic)message);
                     tasks.Add(task);
                 }
