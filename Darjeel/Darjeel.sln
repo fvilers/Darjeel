@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure", "Darjeel.Infrastructure\Darjeel.Infrastructure.csproj", "{3607CA1D-058C-4370-8690-71CF03AC0A3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel", "Darjeel\Darjeel.csproj", "{3607CA1D-058C-4370-8690-71CF03AC0A3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.EntityFramework", "Darjeel.Infrastructure.EntityFramework\Darjeel.Infrastructure.EntityFramework.csproj", "{D840B7F8-C596-4302-BD7B-9318D4EBE944}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.EntityFramework", "Darjeel.EntityFramework\Darjeel.EntityFramework.csproj", "{D840B7F8-C596-4302-BD7B-9318D4EBE944}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.Web", "Darjeel.Infrastructure.Web\Darjeel.Infrastructure.Web.csproj", "{D75D437E-CF44-4646-AD88-0ECA15F92383}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Web", "Darjeel.Web\Darjeel.Web.csproj", "{D75D437E-CF44-4646-AD88-0ECA15F92383}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{99B53DDC-3357-4623-B836-A18DB3E05077}"
 	ProjectSection(SolutionItems) = preProject
@@ -18,9 +18,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{99B53D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8DC09DD0-CBD6-48D4-9F09-90C4EC03687F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.Memory", "Darjeel.Infrastructure.Memory\Darjeel.Infrastructure.Memory.csproj", "{E3CB8B1C-316B-44F1-8EB7-4ABEC09F14B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Memory", "Darjeel.Memory\Darjeel.Memory.csproj", "{E3CB8B1C-316B-44F1-8EB7-4ABEC09F14B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Infrastructure.Azure", "Darjeel.Infrastructure.Azure\Darjeel.Infrastructure.Azure.csproj", "{414845B6-E978-4A28-A868-D3B9CA2ACEFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darjeel.Azure", "Darjeel.Azure\Darjeel.Azure.csproj", "{414845B6-E978-4A28-A868-D3B9CA2ACEFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
