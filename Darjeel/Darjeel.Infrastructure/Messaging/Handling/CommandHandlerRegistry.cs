@@ -1,3 +1,4 @@
+using Darjeel.Infrastructure.Diagnostics.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace Darjeel.Infrastructure.Messaging.Handling
 
             if (_handlers.Keys.Any(registeredType => supportedCommandTypes.Contains(registeredType)))
             {
+                Logging.Darjeel.TraceError("The command handled by the received handler already has a registered handler.");
                 throw new ArgumentException("The command handled by the received handler already has a registered handler.");
             }
 
