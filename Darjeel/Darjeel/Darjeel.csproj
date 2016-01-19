@@ -52,6 +52,7 @@
     <Compile Include="Diagnostics\Extensions\TraceSourceExtensions.cs" />
     <Compile Include="Domain\AggregateRepository.cs" />
     <Compile Include="Domain\AggregateRoot.cs" />
+    <Compile Include="Domain\Extensions\AggregateRepositoryExtensions.cs" />
     <Compile Include="Domain\IAggregateRepository.cs" />
     <Compile Include="Domain\IAggregateRoot.cs" />
     <Compile Include="EntityNotFound.cs" />

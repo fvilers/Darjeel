@@ -1,5 +1,6 @@
 ﻿using BookStore.Catalog.Commands;
 using Darjeel.Domain;
+using Darjeel.Domain.Extensions;
 using Darjeel.Messaging.Handling;
 using System;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace BookStore.Catalog.CommandHandlers
         public async Task HandleAsync(CreateProduct command)
         {
             var product = new Product(command.Title);
-            await _repository.StoreAsync(product, command.Id.ToString());
+            await _repository.StoreAsync(product, command.Id);
         }
     }
 }
