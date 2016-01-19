@@ -4,6 +4,6 @@ namespace Darjeel.Messaging
 {
     public interface IEvent : IMessage
     {
-        Guid SourceId { get; }
+        Guid SourceId { get; set; }
     }
 }

@@ -28,26 +28,27 @@ namespace Darjeel.Domain
             _handlers.Add(typeof(T), @event => handler((T)@event));
         }
 
-        protected void Raise(IEvent @event)
+        protected void Raise(IVersionedEvent @event)
         {
             if (@event == null) throw new ArgumentNullException(nameof(@event));
 
-            var versionedEvent = new VersionedEvent(Id, Version + 1, @event);
+            @event.SourceId = Id;
+            @event.Version = Version + 1;
 
-            Raise(versionedEvent, true);
+            Raise(@event, true);
         }
 
         protected void ReplayHistory(IEnumerable<IVersionedEvent> history)
         {
             if (history == null) throw new ArgumentNullException(nameof(history));
 
-            foreach (var e in history)
+            foreach (var @event in history)
             {
-                Raise(e);
+                Raise(@event);
             }
         }
 
-        private void Raise(IVersionedEvent @event, bool isNew = false)
+        private void Raise(IVersionedEvent @event, bool isNew)
         {
             Action<IVersionedEvent> handler;
             if (_handlers.TryGetValue(@event.GetType(), out handler))

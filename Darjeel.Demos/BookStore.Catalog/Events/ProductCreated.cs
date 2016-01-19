@@ -1,14 +1,12 @@
-﻿using Darjeel.Messaging;
-using System;
+﻿using Darjeel.EventSourcing;
 
 namespace BookStore.Catalog.Events
 {
-    public class ProductCreated : Event
+    public class ProductCreated : VersionedEvent
     {
         public string Title { get; private set; }
 
-        public ProductCreated(Guid sourceId, string title)
-            : base(sourceId)
+        public ProductCreated(string title)
         {
             Title = title;
         }

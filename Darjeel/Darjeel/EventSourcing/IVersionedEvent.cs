@@ -4,7 +4,7 @@ namespace Darjeel.EventSourcing
 {
     public interface IVersionedEvent : IEvent
     {
-        int Version { get; }
-        IEvent Event { get; }
+        int Version { get; set; }
+        IEvent Event { get; set; }
     }
 }

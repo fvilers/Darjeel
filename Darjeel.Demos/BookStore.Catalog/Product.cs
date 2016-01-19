@@ -1,8 +1,8 @@
-﻿using Darjeel.Domain;
+﻿using BookStore.Catalog.Events;
+using Darjeel.Domain;
 using Darjeel.EventSourcing;
 using System;
 using System.Collections.Generic;
-using BookStore.Catalog.Events;
 
 namespace BookStore.Catalog
 {
@@ -15,7 +15,7 @@ namespace BookStore.Catalog
         {
             if (title == null) throw new ArgumentNullException(nameof(title));
 
-            Raise(new ProductCreated(Id, title));
+            Raise(new ProductCreated(title));
         }
 
         public Product(Guid id, IEnumerable<IVersionedEvent> history)
