@@ -10,19 +10,18 @@ namespace Darjeel.EntityFramework
         {
         }
 
-        public bool IsDetached<TEntity>(TEntity entity)
-            where TEntity : class
-        {
-            if (entity == null) throw new ArgumentNullException(nameof(entity));
-
-            var entry = Entry(entity);
-
-            return entry.State == EntityState.Detached;
-        }
-
         public DbContextTransaction BeginTransaction()
         {
             return Database.BeginTransaction();
+        }
+
+        public void SetValues<TEntity>(TEntity original, TEntity entity)
+            where TEntity : class
+        {
+            if (original == null) throw new ArgumentNullException(nameof(original));
+            if (entity == null) throw new ArgumentNullException(nameof(entity));
+
+            Entry(original).CurrentValues.SetValues(entity);
         }
     }
 }

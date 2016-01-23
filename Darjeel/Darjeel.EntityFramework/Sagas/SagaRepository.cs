@@ -39,11 +39,17 @@ namespace Darjeel.EntityFramework.Sagas
 
             using (var context = _contextFactory())
             {
-                if (context.IsDetached(saga))
+                var original = context.Set<T>().Find(saga.Id);
+
+                if (original == null)
                 {
-                    Logging.DarjeelEntityFramework.TraceInformation($"Attaching saga {saga.Id} to its context because it is currently detached.");
                     context.Set<T>().Add(saga);
                 }
+                else
+                {
+                    context.SetValues(original, saga);
+                }
+
 
                 await context.SaveChangesAsync();
             }
