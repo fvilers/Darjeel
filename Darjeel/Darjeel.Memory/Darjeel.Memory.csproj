@@ -52,6 +52,8 @@
     <Compile Include="Logging.cs" />
     <Compile Include="Messaging\CommandBus.cs" />
     <Compile Include="Messaging\EventBus.cs" />
+    <Compile Include="Messaging\InProcCommandBus.cs" />
+    <Compile Include="Messaging\InProcEventBus.cs" />
     <Compile Include="Processors\CommandProcessor.cs" />
     <Compile Include="Processors\EventProcessor.cs" />
     <Compile Include="Processors\MessageProcessor.cs" />

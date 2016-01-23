@@ -1,5 +1,4 @@
 ﻿using Darjeel.EntityFramework.Messaging;
-using Darjeel.EventSourcing;
 using Darjeel.Messaging;
 using Darjeel.Messaging.Handling;
 using Darjeel.Serialization;
@@ -23,9 +22,6 @@ namespace Darjeel.EntityFramework.Processors
         protected override async Task ProcessMessageAsync(object message, string correlationId)
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
-
-            var versionedEvent = message as IVersionedEvent;
-            message = versionedEvent?.Event ?? message;
 
             var eventType = message.GetType();
             IEnumerable<IEventHandler> handlers;
