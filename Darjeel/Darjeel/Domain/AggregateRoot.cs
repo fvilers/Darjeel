@@ -44,7 +44,7 @@ namespace Darjeel.Domain
 
             foreach (var @event in history)
             {
-                Raise(@event);
+                Raise(@event, false);
             }
         }
 
