@@ -37,7 +37,7 @@ namespace Darjeel.Memory.Processors
                     tasks.Add(task);
                 }
             }
-            else if (_registry.TryGetHandlers(typeof(ICommand), out handlers))
+            else if (_registry.TryGetHandlers(typeof(IEvent), out handlers))
             {
                 foreach (var handler in handlers)
                 {
