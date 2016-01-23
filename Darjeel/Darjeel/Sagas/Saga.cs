@@ -6,7 +6,8 @@ namespace Darjeel.Sagas
 {
     public abstract class Saga : ISaga
     {
-        public Guid Id { get; }
+        // Id has a private setter because EF requires Id to be a scalar type.
+        public Guid Id { get; private set; }
         public IEnumerable<Envelope<ICommand>> Commands => _commands;
 
         private readonly List<Envelope<ICommand>> _commands = new List<Envelope<ICommand>>();
