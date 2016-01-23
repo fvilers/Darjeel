@@ -1,4 +1,5 @@
 ﻿using Darjeel.Diagnostics.Extensions;
+using Darjeel.Extensions;
 using Darjeel.Messaging;
 using Darjeel.Processors;
 using System;
@@ -28,6 +29,7 @@ namespace Darjeel.Memory.Processors
             {
                 if (!_isRunning)
                 {
+                    Logging.DarjeelMemory.TraceInformation("Start polling message.");
                     Task.Factory.StartNew(async () => await StartPollingAsync(cancellationToken), cancellationToken, TaskCreationOptions.LongRunning, TaskScheduler.Current);
                     _isRunning = true;
                 }
@@ -51,7 +53,7 @@ namespace Darjeel.Memory.Processors
                     }
                     catch (Exception e)
                     {
-                        Logging.DarjeelMemory.TraceError($"An exception happened while processing message through handler/s: {e.Message}.");
+                        Logging.DarjeelMemory.TraceError($"An exception happened while processing message through handler/s.\r\n{e.AsJson()}");
                         Logging.DarjeelMemory.TraceWarning("Error will be ignored and message receiving will continue.");
                         Debugger.Break();
                     }

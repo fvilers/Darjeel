@@ -1,4 +1,5 @@
 using Darjeel.Diagnostics.Extensions;
+using Darjeel.Extensions;
 using Darjeel.Serialization.Extensions;
 using Newtonsoft.Json;
 using System;
@@ -46,8 +47,8 @@ namespace Darjeel.Serialization
             }
             catch (JsonSerializationException e)
             {
-                Logging.Darjeel.TraceError($"Unable to deserialize reader: {e.Message}.");
-                throw new SerializationException(e.Message, e);
+                Logging.Darjeel.TraceError($"Unable to deserialize reader.\r\n{e.AsJson()}");
+                throw new SerializationException("Unable to deserialize reader.", e);
             }
         }
 
