@@ -10,14 +10,14 @@ namespace Darjeel.EntityFramework.Sagas
     public class SagaRepository<T> : ISagaRepository<T>
         where T : class, ISaga
     {
-        private readonly ISagaContext _context;
+        private readonly Func<ISagaContext> _contextFactory;
         private readonly ICommandBus _commandBus;
 
-        public SagaRepository(ISagaContext context, ICommandBus commandBus)
+        public SagaRepository(Func<ISagaContext> contextFactory, ICommandBus commandBus)
         {
-            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (contextFactory == null) throw new ArgumentNullException(nameof(contextFactory));
             if (commandBus == null) throw new ArgumentNullException(nameof(commandBus));
-            _context = context;
+            _contextFactory = contextFactory;
             _commandBus = commandBus;
         }
 
@@ -25,22 +25,29 @@ namespace Darjeel.EntityFramework.Sagas
         {
             if (predicate == null) throw new ArgumentNullException(nameof(predicate));
 
-            var saga = await _context.Set<T>().FirstOrDefaultAsync(predicate);
+            using (var context = _contextFactory())
+            {
+                var saga = await context.Set<T>().FirstOrDefaultAsync(predicate);
 
-            return saga;
+                return saga;
+            }
         }
 
         public async Task StoreAsync(T saga)
         {
             if (saga == null) throw new ArgumentNullException(nameof(saga));
 
-            if (_context.IsDetached(saga))
+            using (var context = _contextFactory())
             {
-                Logging.DarjeelEntityFramework.TraceInformation($"Attaching saga {saga.Id} to its context because it is currently detached.");
-                _context.Set<T>().Add(saga);
+                if (context.IsDetached(saga))
+                {
+                    Logging.DarjeelEntityFramework.TraceInformation($"Attaching saga {saga.Id} to its context because it is currently detached.");
+                    context.Set<T>().Add(saga);
+                }
+
+                await context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             await _commandBus.SendAsync(saga.Commands);
         }
     }
