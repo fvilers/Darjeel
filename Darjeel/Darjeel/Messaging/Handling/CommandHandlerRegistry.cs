@@ -33,7 +33,14 @@ namespace Darjeel.Messaging.Handling
 
         public bool TryGetHandler(Type commandType, out ICommandHandler handler)
         {
-            return _handlers.TryGetValue(commandType, out handler);
+            if (_handlers.TryGetValue(commandType, out handler))
+            {
+                return true;
+            }
+
+            Logging.Darjeel.TraceInformation($"Handler not found for command '{commandType.FullName}'.");
+
+            return false;
         }
     }
 }

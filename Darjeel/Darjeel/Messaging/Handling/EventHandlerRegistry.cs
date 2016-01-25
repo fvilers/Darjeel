@@ -40,7 +40,7 @@ namespace Darjeel.Messaging.Handling
                 return true;
             }
 
-            Logging.Darjeel.TraceInformation($"Handler not found for type '{eventType.FullName}'.");
+            Logging.Darjeel.TraceInformation($"Handler not found for event '{eventType.FullName}'.");
             handlers = null;
 
             return false;
