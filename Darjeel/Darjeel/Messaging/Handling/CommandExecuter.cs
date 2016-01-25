@@ -9,10 +9,7 @@ namespace Darjeel.Messaging.Handling
 
         public CommandExecuter(ICommandHandlerRegistry registry)
         {
-            if (registry == null)
-            {
-                throw new ArgumentNullException(nameof(registry));
-            }
+            if (registry == null) throw new ArgumentNullException(nameof(registry));
             _registry = registry;
         }
 
