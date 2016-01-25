@@ -8,35 +8,19 @@ namespace Darjeel.Memory.Messaging
 {
     public class InProcCommandBus : ICommandBus
     {
-        private readonly ICommandHandlerRegistry _registry;
+        private readonly ICommandExecuter _executer;
 
-        public InProcCommandBus(ICommandHandlerRegistry registry)
+        public InProcCommandBus(ICommandExecuter executer)
         {
-            if (registry == null)
-            {
-                throw new ArgumentNullException(nameof(registry));
-            }
-            _registry = registry;
+            if (executer == null) throw new ArgumentNullException(nameof(executer));
+            _executer = executer;
         }
 
         public async Task SendAsync(Envelope<ICommand> envelope)
         {
             if (envelope == null) throw new ArgumentNullException(nameof(envelope));
 
-            var message = envelope.Body;
-            var commandType = message.GetType();
-            ICommandHandler handler;
-
-            if (_registry.TryGetHandler(commandType, out handler))
-            {
-                Logging.DarjeelMemory.TraceInformation($"Command '{commandType.FullName}' handled by '{handler.GetType().FullName}.");
-                await ((dynamic)handler).HandleAsync((dynamic)message);
-            }
-            else if (_registry.TryGetHandler(typeof(ICommand), out handler))
-            {
-                Logging.DarjeelMemory.TraceInformation($"Command '{commandType.FullName}' handled by '{handler.GetType().FullName}.");
-                await ((dynamic)handler).HandleAsync((dynamic)message);
-            }
+            await _executer.ExecuteAsync(envelope.Body, envelope.CorrelationId);
         }
 
         public async Task SendAsync(IEnumerable<Envelope<ICommand>> envelopes)
