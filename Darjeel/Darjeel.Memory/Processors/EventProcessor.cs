@@ -19,7 +19,7 @@ namespace Darjeel.Memory.Processors
 
         protected override async Task ProcessMessageAsync(IEvent message, string correlationId)
         {
-            await _dispatcher.DispatchEventAsync(message);
+            await _dispatcher.DispatchEventAsync(message, correlationId);
         }
     }
 }

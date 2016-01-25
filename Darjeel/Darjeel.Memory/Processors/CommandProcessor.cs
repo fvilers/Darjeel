@@ -21,7 +21,7 @@ namespace Darjeel.Memory.Processors
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
 
-            await _executer.ExecuteAsync(message);
+            await _executer.ExecuteAsync(message, correlationId);
         }
     }
 }

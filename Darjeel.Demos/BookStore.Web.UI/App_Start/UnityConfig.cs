@@ -64,12 +64,12 @@ namespace BookStore.Web.UI
             // Infrastructure - Command handling
             container.RegisterType<ICommandHandlerRegistry, CommandHandlerRegistry>(new ContainerControlledLifetimeManager());
             container.RegisterType<ICommandExecuter, CommandExecuter>();
-            RegisterEntityFrameworkCommandBusAndProcessor(container);
+            RegisterInProcCommandBusAndProcessor(container);
 
             // Infrastructure - Event handling
             container.RegisterType<IEventHandlerRegistry, EventHandlerRegistry>(new ContainerControlledLifetimeManager());
             container.RegisterType<IEventDispatcher, EventDispatcher>();
-            RegisterEntityFrameworkEventBusAndProcessor(container);
+            RegisterInProcEventBusAndProcessor(container);
         }
     }
 }

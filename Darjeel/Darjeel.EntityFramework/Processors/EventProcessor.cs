@@ -22,7 +22,7 @@ namespace Darjeel.EntityFramework.Processors
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
 
-            await _dispatcher.DispatchEventAsync((IEvent)message);
+            await _dispatcher.DispatchEventAsync((IEvent)message, correlationId);
         }
     }
 }
