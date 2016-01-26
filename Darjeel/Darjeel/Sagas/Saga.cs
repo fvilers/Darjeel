@@ -6,8 +6,8 @@ namespace Darjeel.Sagas
 {
     public abstract class Saga : ISaga
     {
-        // Id has a private setter because EF requires Id to be a scalar type.
-        public Guid Id { get; private set; }
+        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Local
+        public Guid Id { get; private set; } // Id has a private setter because EF requires Id to be a scalar type
         public IEnumerable<Envelope<ICommand>> Commands => _commands;
 
         private readonly List<Envelope<ICommand>> _commands = new List<Envelope<ICommand>>();

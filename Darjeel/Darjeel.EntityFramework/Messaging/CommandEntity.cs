@@ -4,6 +4,7 @@ namespace Darjeel.EntityFramework.Messaging
 {
     public class CommandEntity : MessageEntity
     {
+        // ReSharper disable once UnusedMember.Local
         private CommandEntity()
         {
             // Required for Entity Framework
