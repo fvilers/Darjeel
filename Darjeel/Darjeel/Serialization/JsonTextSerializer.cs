@@ -12,9 +12,19 @@ namespace Darjeel.Serialization
     public class JsonTextSerializer : ITextSerializer
     {
         private readonly JsonSerializer _serializer;
+        private static readonly JsonSerializerSettings DefaultSettings = new JsonSerializerSettings
+        {
+            TypeNameHandling = TypeNameHandling.All,
+            TypeNameAssemblyFormat = FormatterAssemblyStyle.Simple
+        };
 
         public JsonTextSerializer()
-            : this(CreateSerializer())
+            : this(DefaultSettings)
+        {
+        }
+
+        public JsonTextSerializer(JsonSerializerSettings settings)
+            : this(CreateSerializer(settings))
         {
         }
 
@@ -52,14 +62,8 @@ namespace Darjeel.Serialization
             }
         }
 
-        private static JsonSerializer CreateSerializer()
+        private static JsonSerializer CreateSerializer(JsonSerializerSettings settings)
         {
-            var settings = new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.All,
-                TypeNameAssemblyFormat = FormatterAssemblyStyle.Simple
-            };
-
             settings.EnsureFormatting();
 
             var serializer = JsonSerializer.Create(settings);
