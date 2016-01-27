@@ -4,6 +4,7 @@ namespace Darjeel.EntityFramework.Messaging
 {
     public class EventEntity : MessageEntity
     {
+        // ReSharper disable once UnusedMember.Local
         private EventEntity()
         {
             // Required for Entity Framework
