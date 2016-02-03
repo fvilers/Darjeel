@@ -2,7 +2,7 @@
 using Microsoft.Practices.Unity;
 using System;
 
-namespace BookStore.Web.UI
+namespace Darjeel.Unity
 {
     public static class RegistryConfig
     {
