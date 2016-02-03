@@ -18,11 +18,16 @@ namespace Darjeel.Messaging.Handling
                 .Where(iface => iface.IsGenericType && iface.GetGenericTypeDefinition() == typeof(ICommandHandler<>))
                 .Select(iface => iface.GetGenericArguments()[0])
                 .ToList();
+            var registeredType = _handlers.Keys.FirstOrDefault(x => supportedCommandTypes.Contains(x));
 
-            if (_handlers.Keys.Any(registeredType => supportedCommandTypes.Contains(registeredType)))
+            if (registeredType != null)
             {
-                Logging.Darjeel.TraceError("The command handled by the received handler already has a registered handler.");
-                throw new ArgumentException("The command handled by the received handler already has a registered handler.");
+                var commands = String.Join(", ", supportedCommandTypes.Select(x => x.FullName));
+                var registeredHandler = _handlers[registeredType];
+                var message = $"The command(s) ('{commands}') handled by the received handler ('{handler}') already has a registered handler ('{registeredHandler}').";
+
+                Logging.Darjeel.TraceError(message);
+                throw new ArgumentException(message);
             }
 
             foreach (var commandType in supportedCommandTypes)

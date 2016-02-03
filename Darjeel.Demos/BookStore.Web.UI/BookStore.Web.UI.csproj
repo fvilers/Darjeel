@@ -170,6 +170,10 @@
       <Project>{d840b7f8-c596-4302-bd7b-9318d4ebe944}</Project>
       <Name>Darjeel.EntityFramework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Darjeel\Darjeel.Unity\Darjeel.Unity.csproj">
+      <Project>{A27902A0-A869-4C76-AAD4-6EE3857C3FDE}</Project>
+      <Name>Darjeel.Unity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Darjeel\Darjeel\Darjeel.csproj">
       <Project>{3607CA1D-058C-4370-8690-71CF03AC0A3D}</Project>
       <Name>Darjeel</Name>

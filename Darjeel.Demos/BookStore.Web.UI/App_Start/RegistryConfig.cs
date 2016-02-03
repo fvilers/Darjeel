@@ -1,4 +1,4 @@
-﻿using Darjeel.Messaging.Handling;
+﻿using Darjeel.Unity.Extensions;
 using Microsoft.Practices.Unity;
 using System;
 
@@ -6,38 +6,11 @@ namespace BookStore.Web.UI
 {
     public static class RegistryConfig
     {
-        public static void RegisterCommandHandlers(IUnityContainer container)
+        public static void Register(IUnityContainer container)
         {
             if (container == null) throw new ArgumentNullException(nameof(container));
 
-            var registry = container.Resolve<ICommandHandlerRegistry>();
-
-            if (registry == null)
-            {
-                throw new Exception("No command handler registry has been registed within the given container.");
-            }
-
-            foreach (var handler in container.ResolveAll<ICommandHandler>())
-            {
-                registry.Register(handler);
-            }
-        }
-
-        public static void RegisterEventHandlers(IUnityContainer container)
-        {
-            if (container == null) throw new ArgumentNullException(nameof(container));
-
-            var registry = container.Resolve<IEventHandlerRegistry>();
-
-            if (registry == null)
-            {
-                throw new Exception("No event handler registry has been registed within the given container.");
-            }
-
-            foreach (var handler in container.ResolveAll<IEventHandler>())
-            {
-                registry.Register(handler);
-            }
+            container.RegisterCommandHandlers().RegisterEventHandlers();
         }
     }
 }
