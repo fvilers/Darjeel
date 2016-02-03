@@ -1,5 +1,4 @@
-﻿using Darjeel.Unity;
-using System;
+﻿using System;
 using System.Web.Http;
 
 namespace BookStore.Web.UI
@@ -11,8 +10,7 @@ namespace BookStore.Web.UI
             var container = UnityConfig.GetConfiguredContainer();
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RegistryConfig.RegisterCommandHandlers(container);
-            RegistryConfig.RegisterEventHandlers(container);
+            RegistryConfig.Register(container);
             ProcessorConfig.Start(container);
         }
     }

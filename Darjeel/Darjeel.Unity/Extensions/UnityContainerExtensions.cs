@@ -2,11 +2,11 @@
 using Microsoft.Practices.Unity;
 using System;
 
-namespace Darjeel.Unity
+namespace Darjeel.Unity.Extensions
 {
-    public static class RegistryConfig
+    public static class UnityContainerExtensions
     {
-        public static void RegisterCommandHandlers(IUnityContainer container)
+        public static IUnityContainer RegisterCommandHandlers(this IUnityContainer container)
         {
             if (container == null) throw new ArgumentNullException(nameof(container));
 
@@ -21,9 +21,11 @@ namespace Darjeel.Unity
             {
                 registry.Register(handler);
             }
+
+            return container;
         }
 
-        public static void RegisterEventHandlers(IUnityContainer container)
+        public static IUnityContainer RegisterEventHandlers(this IUnityContainer container)
         {
             if (container == null) throw new ArgumentNullException(nameof(container));
 
@@ -38,6 +40,8 @@ namespace Darjeel.Unity
             {
                 registry.Register(handler);
             }
+
+            return container;
         }
     }
 }

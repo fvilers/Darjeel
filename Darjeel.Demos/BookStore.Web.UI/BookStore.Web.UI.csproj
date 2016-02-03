@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\ProcessorConfig.cs" />
+    <Compile Include="App_Start\RegistryConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityConfig.entityframework.cs" />
     <Compile Include="App_Start\UnityConfig.inproc.cs" />
